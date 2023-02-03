@@ -1,0 +1,334 @@
+@font-face {
+    font-family:NunitoSans;
+    src: url("fonts/NunitoSans-Regular.ttf");
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0px;
+    padding: 0px;
+}
+
+.container{
+    width: 1140px;
+    margin: auto;
+    max-width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav{
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    position: relative;
+}
+/* nav --> .row */
+nav .row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.navbar{
+    margin-left: auto;
+}
+.navbar li{
+    display: inline-block;
+}
+.navbar li a:hover{
+    background-color:rgb(19, 19, 19);
+    color: white;
+    border-radius: 6px;
+}
+
+.navbar li a{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: NunitoSans;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+.logo{
+    top: 12px;
+    position: absolute;
+}
+
+/* droplist */
+.droplist{
+    position: relative;
+    transition: .6s;
+}
+.dropdown{
+    position: absolute;
+    background-color: #fff;
+    padding: 18px;
+    box-shadow: 2px 20px 20px rgb(85, 85, 85);
+    opacity: 0;
+    height: 0rem;
+    transition: .6s;
+    display: none;
+}
+
+.droplist:hover .dropdown{
+    opacity: 1;
+    height: 12rem;
+    display: block
+}
+header{
+    height: 60vh;
+    background-image:url("pic/me.png");      
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    background-size:80vh;
+    display: flex;
+    background-position-x: 20%;
+    background-position-y: 80%;
+    justify-content: flex-end;
+    align-items: center;
+    font-family:sans-serif ;
+}
+header img{
+    height: 500px;
+}
+.textbox{
+    background-color: rgba(128, 128, 128, 0.219);
+    color: black;
+    display: inline-block;
+    padding:35px 100px;
+    outline: 20px solid rgba(128, 128, 128, 0.219);
+    outline-offset:3px ;
+    text-align: center;
+}
+.textbox p{
+    font-family:NunitoSans;
+    text-transform: capitalize;
+    font-size: .8rem;
+}
+.main .row{
+    justify-content: flex-end;
+    padding:0 55px ;
+}
+
+.list-inline{
+    margin:40px 0px;
+    padding: 0px;
+}
+.list-inline li{
+    display: inline-block;
+    font-family: NunitoSans;
+    padding: .7rem;
+    cursor: pointer;
+    font-weight: 900;
+    border-radius: 6px;
+}
+.list-inline li:hover{
+    background-color: black;
+    color: #fff;
+}
+.col-100{
+    width: 100%;
+}
+
+/* PRODUCTS */
+.col-3{
+    width: 33.333%;
+    padding-right:20px;
+}
+
+.card{
+    box-shadow: 3px 3px 8px rgba(85, 85, 85, 0.418);
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius:3px ;
+    border-top-right-radius:3px ;
+}
+.card-body{
+    padding: 20px;
+    text-align: center;
+    font-family:NunitoSans;
+    font-size: 1.2rem;
+    padding-top: 1px;   
+}
+
+.products .row .col-3:nth-child(2) img{
+    height: 230px;
+}
+
+.myBlog{
+    background-color: rgba(128, 128, 128, 0.438);
+    padding: 40px 0;
+    text-align: center;
+}
+.myBlog h1{
+    font-family:NunitoSans ;
+}
+
+.myBlog .card{
+    box-shadow: none;
+}
+
+.myBlog .row .card-body p{
+    font-weight: lighter;
+}
+
+footer{
+    color:gray ;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+}
+footer .row{
+    justify-content: space-between;
+
+}
+footer p{
+    padding: 5px;
+}
+.socials li{
+    color: rgb(78, 78, 78);
+    display: inline-block;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+}
+.socials li:hover{
+    color: rgba(255, 0, 0, 0.562);
+}
+
+.bi-list-ul{
+    font-size: 3rem;
+}
+.burgerMenu{
+    display: none;
+    cursor: pointer;
+}
+.burgerMenu + input{
+    display: none;
+}
+@media (max-width:1000px){
+    header{
+        background-position: left;
+        background-size: contain;
+        background-position-y: 10px;
+    }
+}
+
+@media (max-width:842px) {
+    .myBlog .row p{
+        display: none;
+    }
+    .myBlog{
+        padding: 10px 0;
+    }
+}
+
+@media (max-width:768px) {
+    header{
+        background-image: none;
+    }
+    .main .row{
+        justify-content: center;
+    }
+    .products .row .col-3{
+        width: 50%;
+    }
+    .products .row {
+       justify-content: center;
+    }
+    .products .row .col-3:nth-child(2) img{
+        height: 200px;
+    }
+    .logo{
+        width: 50px;
+    }
+}
+@media (max-width:720px) {
+    footer .row{
+        font-size: 1rem;
+        justify-content: center;
+    }
+    footer{
+        height:0;
+    }
+    .F-socials{
+        padding: 0px;
+        padding-bottom: 5px;
+    }
+    .nav{
+        position: relative;
+    }
+    .navbar{
+        display: none;
+        position: absolute;
+        background-color: #ffffff46;
+        top:37px;
+        right: 0;
+        text-align: end;
+        /* right: 20px; */
+    }
+    .navbar li{
+        display: block;
+    }
+    .burgerMenu{
+        display: block;
+        position: relative;
+        right: 15px;
+        top: 15px;
+        height: 10px;
+    }
+    .logo{
+        /* display: none; */
+        position: relative;
+        top: 0;
+    }
+
+    #burgermenu:checked + .navbar{
+        display: block;
+    }
+}
+@media(max-width:500px){
+    .col-3,
+    .products .row .col-3{
+        width: 100%;
+        padding: 30px;
+    }
+    .myBlog .row p{
+        display: block;
+    }
+}
+@media (max-width:425px) {
+    .socials li{
+        display: block;
+    }
+    footer p{
+        display: inline-block;
+    }
+    footer{
+        justify-content: center;
+    }
+    footer .row{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .socials{
+        padding: 0px;
+    }
+    footer{
+        height: 250px;
+    } 
+}
